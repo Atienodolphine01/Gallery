@@ -39,5 +39,21 @@ class Picture(models.Model):
     def delete_Picture(self):
         self.delete()
 
+    @classmethod
+    def search_by_category(cls,category):
+        pictures = cls.objects.filter(category_name=category)
+        return pictures
 
+    @classmethod
+    def display_all_pictures(cls):
+        all_pictures = cls.objects.all()
+        return all_pictures
     
+    @classmethod
+    def get_picture_by_id(cls,id):
+        return cls.objects.filter(id=id)
+
+    @classmethod
+    def filter_by_location(cls, location):
+        picture_location = Picture.objects.filter(location__name=location).all()
+        return picture_location
