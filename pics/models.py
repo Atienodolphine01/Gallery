@@ -25,6 +25,19 @@ class Category(models,Model):
 
     def __str__(self):
         return self.name
- 
+
+class Picture(models.Model):
+    Picture = models.PictureField(upload_to='images/',null=True)
+    picture_name = models.CharField(max_length=255)
+    picture_description = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+
+    def save_Picture(self):
+        self.save()
+
+    def delete_Picture(self):
+        self.delete()
+
 
     
