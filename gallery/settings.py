@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'picfolder',
-        'USER': 'dolphine',
+        'USER': 'moringaschool',
         'PASSWORD': 'dolphine',
     }
 }
