@@ -35,7 +35,7 @@
     <div style="font-family: ABeeZee;" id="{{picture.id}}" class="modal fade" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
-        <div class="modal-content " style="background-color: rgb(63, 63, 63);">
+        <div class="modal-content ">
             <div class="modal-header">
                 <h4 class="modal-title" id="imagetitle"></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -45,15 +45,14 @@
                 <img style="height: 300px; width: 430px;" id="image" class=" rounded text-center"
                     src='{{picture.picture.url}}'> </div>
             <div class="modal-body" style="text-align:center">
-                <p1 style="color: rgb(255, 204, 108);" id="imageimage_description">{{ picture.picture_description }}</p1>
-                <p style="color: rgb(156, 102, 0);"><small class="text-muted">Posted on: {{picture.pub_date}}</small></p>
+                <p1 id="picture_description">{{ picture.picture_description }}</p1>
                 <a target="_blank" href="{{picture.picture.url}}" id="imagedirectlink" class="btn btn-outline-warning">view
                     image</a>
             </div>
                 <div class="modal-footer"> 
                         <div class="text-center">
-                              <input id="select-this" class="ml-0 form-control-sm" type="text" name="" value="{{ post.get_absolute_url }}" size="20" readonly>
-                              <button class="btn btn-outline-primary btn-sm myinput" id="copy_code" data-toggle="tooltip" data-placement="top" title="Copied To Clipboard" data-delay='{"show":"1", "hide":"3000"}' >Copy Image Link</button>
+                              <input id="select-this" class="ml-0 form-control-sm" type="text" name="" value="{{ picture.picture.url }}" size="20" readonly>
+                              <button class="btn btn-outline-success btn-sm myinput" id="copy_code" data-toggle="tooltip" data-placement="top" title="Copied To Clipboard" data-delay='{"show":"1", "hide":"3000"}' >Copy Image Link</button>
                         </div>
                 </div>
                 </div>
