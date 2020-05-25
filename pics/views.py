@@ -18,13 +18,13 @@ def search_results(request):
         message = " Nothing has been searched. Please try again."
         return render(request,'search.html',{"message":message})
 
-
 def search_location(request,location):
     pictures_by_location = Picture.filter_by_location(location)
 
     return render(request,'location.html',{"pictures":pictures_by_location})
 
-def search_location(request,pic):
+def search_picture(request,pic):
     pictures_by_location = Picture.get_picture_by_id(pic)
 
     return render(request,'location.html',{"pictures":pictures_by_location})
+

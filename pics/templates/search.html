@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+{{block.super}}
+<div class="container-fluid bg-white">
+        <h2 class="text-center">Gallery</h2>
+        <hr>
+        <div class="row">
+            {% if picture %}
+                <h2>Found {{ picture|length }} of searched term {{message}}</h2> <hr>
+            {% else %}
+                <h2> Found 0 photos for the search term {{message}}</h2> <hr>
+            {% endif %}
+        </div>
+        <div class="row justify-content-center">
+        {% if picture %}
+        {% for picture in pictures %}
+            <div class="col-md-4 col-sm-6  col p-2">
+                <div class="card">
+                    <img src="{{picture.picture}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title">
+                            {{ picture.picture_description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6  col p-2">
+                <div class="card">
+                    <img src="{{picture.picture}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <div class="card-title">
+                            {{ picture.picture_description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}

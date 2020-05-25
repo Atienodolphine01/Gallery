@@ -1,0 +1,17 @@
+.landing-top{
+    background: url("../images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.landing-top .row {
+    background: rgba(0,0,0,0.4)
+}
+.min-vh-40{
+    min-height: 40vh;
+}
+.transparent-input {
+    background: transparent !important;
+    color: rgba(255,255,255,0.8) !important;
+
+}
