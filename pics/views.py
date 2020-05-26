@@ -7,12 +7,12 @@ def index(request):
     return render(request,'index.html',{"pictures":pictures})
 
 def search_results(request):
-    if 'picture' in request.GET and request.GET["picture"]:
-        search_term = request.GET.get("picture")
+    if 'search_text' in request.GET and request.GET["search_text"]:
+        search_term = request.GET.get("search_text")
         searched_Pictures = Picture.search_by_description(search_term)
         message = f"{search_term}"
 
-        return render(request, 'search.html',{"message": message,"Pictures": searched_Pictures})
+        return render(request, 'search.html',{"message": message,"pictures": searched_Pictures})
 
     else:
         message = " Nothing was found. Please try again."
