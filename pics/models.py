@@ -58,3 +58,11 @@ class Picture(models.Model):
     def filter_by_location(cls, location):
         picture_location = Picture.objects.filter(location__name=location).all()
         return picture_location
+
+    @classmethod
+    def search_by_title(cls, search_term):
+        news = cls.objects.filter(name__icontains=search_term)
+        return news
+        
+    class Meta:
+        ordering = ['picture_name']

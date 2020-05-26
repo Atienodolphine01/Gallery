@@ -18,12 +18,7 @@
         {% for picture in pictures %}
             <div class="col-md-4 col-sm-6  col p-2">
                 <div class="card">
-                    <img src="{{picture.picture}}" alt="" class="card-img-top">
-                    <div class="card-body">
-                        <div class="card-title">
-                            {{ picture.picture_description }}
-                        </div>
-                    </div>
+                    <img src="{{picture.picture}}" alt="">
                 </div>
             </div>
             {% endfor %}

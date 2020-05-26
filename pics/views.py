@@ -15,7 +15,7 @@ def search_results(request):
         return render(request, 'search.html',{"message": message,"Pictures": searched_Pictures})
 
     else:
-        message = " Nothing has been searched. Please try again."
+        message = " Nothing was found. Please try again."
         return render(request,'search.html',{"message":message})
 
 def search_location(request,location):
