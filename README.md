@@ -42,7 +42,7 @@ To install the requirements from `requirements.txt` file,
 Making migrations on postgres using django
 
 ```prettier
-python3 manage.py makemigrations garage
+python3 manage.py makemigrations
 ```
 
  
