@@ -41,8 +41,8 @@ class Picture(models.Model):
         self.delete()
 
     @classmethod
-    def search_by_category(cls,category):
-        pictures = cls.objects.filter(category_name=category)
+    def search_by_description(cls,description):
+        pictures = cls.objects.filter(picture_description__icontains=description)
         return pictures
 
     @classmethod
@@ -61,7 +61,7 @@ class Picture(models.Model):
 
     @classmethod
     def search_by_title(cls, search_term):
-        news = cls.objects.filter(name__icontains=search_term)
+        news = cls.objects.filter(picture_description__icontains=search_term)
         return news
         
     class Meta:

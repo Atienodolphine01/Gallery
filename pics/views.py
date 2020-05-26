@@ -9,7 +9,7 @@ def index(request):
 def search_results(request):
     if 'picture' in request.GET and request.GET["picture"]:
         search_term = request.GET.get("picture")
-        searched_Pictures = Picture.search_by_category(search_term)
+        searched_Pictures = Picture.search_by_description(search_term)
         message = f"{search_term}"
 
         return render(request, 'search.html',{"message": message,"Pictures": searched_Pictures})
